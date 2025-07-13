@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles_multimedia.css" />
+
+    <title>www.ube.com/principal/multimedia</title>
+  </head>
+  <body>
+    <div class="video-container">
+      <h1>UBE Chemical Europe S.A.</h1>
+      <video id="myVideo" muted>
+        <source src="vid/UBE vídeo corporativo 2022.mp4" type="video/mp4" />
+      </video>
+      <div class="pulsadores">
+        <button onclick="togglePlayPause()">¿Vamos?</button>
+        <button onclick="goBack()" id="backButton">Volver</button>
+      </div>
+    </div>
+    <audio id="bandaSonora">
+      <source
+        src="audio/Becoming One of The People, Becoming One With Neytiri (mp3cut.net).mp3"
+        type="audio/mp3"
+      />
+      Sonido no habilitado
+    </audio>
+    <!--Importamos el archivo JavaScript-->
+    <script src="multimedia.js"></script>
+  </body>
+</html>

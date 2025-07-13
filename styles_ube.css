@@ -1,0 +1,89 @@
+/* Elimina márgenes y rellenos por defecto de todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo para la sección principal con fondo (showcase) */
+.showcase {
+  position: relative;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  display: flex; /* Usamos flexbox para centrar los elementos */
+  flex-direction: column; /* Los elementos dentro del contenedor estarán en una columna */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  padding: 0 20px; /* Espaciado horizontal */
+}
+
+/* Estilos para el contenedor del video */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* El video ocupa todo el ancho */
+  height: 100%; /* El video ocupa toda la altura */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor */
+}
+
+/* Estilos para el video dentro del contenedor */
+.video-container video {
+  min-height: 100%; /* El video cubre toda la altura mínima */
+  min-width: 100%; /* El video cubre todo el ancho mínimo */
+  object-fit: cover; /* Ajusta el video para cubrir todo el contenedor sin distorsionarlo */
+  position: absolute; /* Posiciona el video de manera absoluta dentro del contenedor */
+  top: 50%; /* Coloca el video en el centro vertical */
+  left: 50%; /* Coloca el video en el centro horizontal */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Ajusta la posición para centrar el video perfectamente */
+  z-index: -1; /* Asegura que el video quede detrás de otros elementos */
+}
+
+/* Crea una capa de oscurecimiento encima del video */
+.video-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cubre todo el ancho */
+  height: 100%; /* Cubre toda la altura */
+  background: rgb(0, 0, 0, 0.5); /* Aplica un fondo negro semitransparente */
+}
+
+/* Estilo para el título "UBE" */
+a {
+  text-decoration: none;
+}
+.UBE {
+  position: absolute; /* Posiciona el título de forma absoluta en la pantalla */
+  top: 30%; /* Lo coloca un 30% desde la parte superior */
+  right: 50%; /* Lo coloca a la mitad desde la derecha */
+  display: flex; /* Usamos flexbox para alinear las letras */
+  padding: 10px; /* Añade un poco de espaciado alrededor del título */
+  border-radius: 5px; /* Bordes redondeados para un estilo más suave */
+}
+
+/* Estilo para la lista de letras del título */
+ul {
+  color: #add8e6; /* Color de texto azul claro */
+  display: flex; /* Alinea las letras en una fila */
+  align-items: center; /* Centra las letras verticalmente */
+  justify-content: center; /* Centra las letras horizontalmente */
+}
+
+/* Estilo para cada letra del título */
+li {
+  list-style: none; /* Elimina el punto de lista */
+  font-size: 3em; /* Hace las letras grandes */
+  letter-spacing: 10px; /* Espacio entre letras */
+  transition: 1s; /* Transición suave de 2 segundos */
+  opacity: 0.3; /* Comienza con opacidad baja */
+}
+
+/* Efecto al pasar el ratón sobre las letras */
+li:hover {
+  filter: blur(70px); /* Aplica un desenfoque fuerte */
+  opacity: 0; /* Hace las letras completamente invisibles */
+}
